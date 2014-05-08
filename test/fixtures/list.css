@@ -1,9 +1,3 @@
-body {
-  color: black;
-  display: flex;
-  flex-direction: column;
-}
-
 .list {
   display: flex;
   font-size: 1em;

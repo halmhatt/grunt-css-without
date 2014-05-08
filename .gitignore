@@ -2,3 +2,5 @@ node_modules
 npm-debug.log
 tmp
 .jshintrc
+grunt-css-without.sublime-workspace
+grunt-css-without.sublime-project

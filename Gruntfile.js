@@ -34,16 +34,19 @@ module.exports = function(grunt) {
         options: {
         },
         files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123']
+          'tmp/default_options': ['test/fixtures/main.css', 'test/fixtures/list.css']
         }
       },
       custom_options: {
         options: {
-          separator: ': ',
-          punctuation: ' !!!'
+          declarations: {
+            flexDirection: null,
+            display: ['flex', 'inline-flex']
+          },
+          separator: ''
         },
         files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123']
+          'tmp/custom_options': ['test/fixtures/main.css', 'test/fixtures/list.css']
         }
       }
     },

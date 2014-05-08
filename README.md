@@ -37,48 +37,89 @@ grunt.initConfig({
 
 ### Options
 
+#### options.declarations
+Type: `Object`
+Default value: `{}`
+
+An object describing all the properties *(and optionally values) that you want to remove from the CSS-files.
+
+Use *camel case* or *wrap properties with `"`*
+
+```js
+{
+  // Remove all flex-direction declarations
+  flexDirection: null,
+
+  "border-radius": null
+}
+```
+
+Specify a value if you only want that value removed, *value must match exactly*. 
+
+```js
+{
+  // Remove all display: flex; declarations
+  display: "flex"
+}
+```
+
+You may also specify multiple values
+
+```js
+{
+  display: ["flex", "inline-flex"]
+}
+```
+
 #### options.separator
 Type: `String`
-Default value: `',  '`
+Default value: `'\n'`
 
-A string value that is used to do something with whatever.
-
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
-
-A string value that is used to do something else with whatever else.
+A string value separating the files when concatinating. This will nog be seen in the output.
 
 ### Usage Examples
 
 #### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+With the default options, the files will just be contatinated, and formated. 
 
 ```js
 grunt.initConfig({
   css_without: {
     options: {},
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
+      'dest/styles.css': ['css/main.css', 'css/list.css']
+    }
+  }
 });
 ```
 
 #### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+With these options the files will be concatinated and all *flex* declarations will be removed. For example if you want to test in brower without flex.
 
 ```js
 grunt.initConfig({
   css_without: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
+      declarations: [
+        display: ['flex', 'inline-flex'],
+        flex: null,
+        flexDirection: null,
+        flexWrap: null,
+        flexFlow: null,
+        justifyContent: null,
+        alignItems: null,
+        alignContent: null,
+        order: null,
+        flexGrow: null,
+        flexShrink: null,
+        flexBasis: null,
+        alignSelf: null
+      ]
     },
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
+      'dest/styles.css': ['css/main.css', 'css/list.css']
+    }
+  }
 });
 ```
 
@@ -86,4 +127,4 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+* 2014-05-08...v0.1.0...First release
