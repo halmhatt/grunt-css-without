@@ -1,0 +1,45 @@
+{
+  "name": "grunt-css-without",
+  "description": "Remove CSS properties from files",
+  "version": "0.1.0",
+  "homepage": "https://github.com/halmhatt/grunt-css-without",
+  "author": {
+    "name": "Jacob Carlsson",
+    "email": "jacob.carlsson@gmail.com",
+    "url": "jacobcarlsson.se"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/halmhatt/grunt-css-without.git"
+  },
+  "bugs": {
+    "url": "https://github.com/halmhatt/grunt-css-without/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/halmhatt/grunt-css-without/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.9.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt": "~0.4.4"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.4"
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "dependencies": {
+    "css-parse": "^1.7.0"
+  }
+}
