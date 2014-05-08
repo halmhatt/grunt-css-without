@@ -43,7 +43,7 @@ Default value: `{}`
 
 An object describing all the properties *(and optionally values) that you want to remove from the CSS-files.
 
-Use *camel case* or *wrap properties with `"`*
+Use *camel case* or *wrap properties with `"`(citation mark)*
 
 ```js
 {
@@ -67,6 +67,7 @@ You may also specify multiple values
 
 ```js
 {
+  // Remove both display: flex; and display: inline-flex; declarations
   display: ["flex", "inline-flex"]
 }
 ```
